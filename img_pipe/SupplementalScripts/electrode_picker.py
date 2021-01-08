@@ -212,7 +212,7 @@ class electrode_picker:
             print(img_data.shape)
         
         # Threshold the CT so only bright objects (electrodes) are visible
-        ct_data[ct_data < 1000] = np.nan
+        pd.to_numeric(ct_data[ct_data < 1000]) = np.nan
 
         self.ct_data = ct_data
         self.img_data = img_data
